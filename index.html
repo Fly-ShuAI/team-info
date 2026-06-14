@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ChatGPT Team / Business 会员兑换介绍、使用额度、兑换流程和售后说明。">
+  <meta property="og:title" content="ChatGPT Team / Business 会员兑换">
+  <meta property="og:description" content="邮箱兑换、质保一个月、可长期续费，含 ChatGPT 与 Codex 使用说明。">
+  <meta property="og:image" content="image/product-hero.png">
+  <title>ChatGPT Team / Business 会员兑换</title>
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --surface: #ffffff;
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #dce3ea;
+      --teal: #008c7a;
+      --teal-dark: #006b5c;
+      --blue: #246bfe;
+      --amber: #f59e0b;
+      --rose: #ef5a5a;
+      --shadow: 0 18px 48px rgba(23, 32, 42, 0.12);
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(220, 227, 234, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      background: #111827;
+      color: #ecfeff;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+      background: #eef4f8;
+      color: var(--ink);
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(760px, 82vh);
+      display: flex;
+      align-items: flex-end;
+      isolation: isolate;
+      overflow: hidden;
+      color: #ffffff;
+      background-image:
+        linear-gradient(90deg, rgba(11, 18, 32, 0.92) 0%, rgba(11, 18, 32, 0.78) 35%, rgba(11, 18, 32, 0.3) 72%, rgba(11, 18, 32, 0.46) 100%),
+        url("image/product-hero.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 30%;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(11, 18, 32, 0), rgba(11, 18, 32, 0.78));
+    }
+
+    .hero-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 94px 0 58px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #b6ffed;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: #34d399;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 740px;
+      margin-top: 16px;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1.02;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(17px, 2vw, 22px);
+      overflow-wrap: anywhere;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 0 18px;
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: #35e2b8;
+      color: #06251f;
+      box-shadow: 0 12px 30px rgba(53, 226, 184, 0.24);
+    }
+
+    .button-ghost {
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 880px;
+      margin-top: 42px;
+    }
+
+    .point {
+      min-height: 86px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .point strong {
+      display: block;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .point span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-tight {
+      padding-top: 54px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      max-width: 690px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.18;
+      font-weight: 900;
+    }
+
+    .lead {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      background: var(--surface);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .benefit {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(23, 32, 42, 0.05);
+    }
+
+    .benefit-tag {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      border-radius: 5px;
+      padding: 0 9px;
+      background: #e7fff6;
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .benefit h3 {
+      margin-top: 16px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .benefit p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .quota-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .quota {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--surface);
+    }
+
+    .quota-icon {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: var(--blue);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .quota strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .quota span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .band {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: flex-start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: var(--surface);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 8px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .step p,
+    .step li {
+      color: var(--muted);
+    }
+
+    .step p {
+      margin-top: 6px;
+    }
+
+    .step ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .image-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .screenshot {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot img {
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      padding: 12px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .note {
+      border-left: 4px solid var(--amber);
+      border-radius: 8px;
+      padding: 14px 16px;
+      background: #fff8eb;
+      color: #69470a;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      font-size: 17px;
+      font-weight: 850;
+    }
+
+    details p,
+    details ul {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    details ul {
+      padding-left: 40px;
+    }
+
+    .support {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .support-copy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .support-list li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .support-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--teal);
+    }
+
+    .qr-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(23, 32, 42, 0.08);
+    }
+
+    .qr-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .qr-card strong {
+      display: block;
+      margin-top: 12px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 720px;
+        background-position: 58% center;
+        background-image:
+          linear-gradient(90deg, rgba(11, 18, 32, 0.96) 0%, rgba(11, 18, 32, 0.88) 42%, rgba(11, 18, 32, 0.58) 100%),
+          url("image/product-hero.png");
+      }
+
+      .hero-inner {
+        padding: 84px 0 42px;
+      }
+
+      .hero-points,
+      .benefit-grid,
+      .quota-grid,
+      .faq-grid,
+      .image-showcase,
+      .support {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .support {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container,
+      .hero-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .point {
+        min-height: 74px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .quota,
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .step::before {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">AI</span>
+        <span>ChatGPT Team / Business 会员</span>
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#benefits">商品权益</a>
+        <a href="#guide">使用说明</a>
+        <a href="#faq">常见问题</a>
+        <a href="#support">售后群</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="ChatGPT Team / Business 会员兑换">
+      <div class="hero-inner">
+        <span class="kicker">邮箱兑换 · 一个月质保</span>
+        <h1>ChatGPT Team / Business 会员兑换</h1>
+        <p class="hero-copy">本店售卖的会员为“企业 ChatGPT 和 Codex”相关权益，包含 GPT Plus 使用体验与 Codex。下单后发卡密，兑换到自己的 GPT 账号邮箱。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#guide">查看兑换流程</a>
+          <a class="button button-ghost" href="#benefits">查看使用额度</a>
+        </div>
+        <div class="hero-points" aria-label="商品卖点">
+          <div class="point">
+            <strong>稳定运行</strong>
+            <span>已稳定运行几个月，有售后。</span>
+          </div>
+          <div class="point">
+            <strong>质保一个月</strong>
+            <span>异常情况按售后规则处理。</span>
+          </div>
+          <div class="point">
+            <strong>长期续费</strong>
+            <span>续费后数据可保留在原空间。</span>
+          </div>
+          <div class="point">
+            <strong>邮箱兑换</strong>
+            <span>下单后把卡密兑换到自己的邮箱。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>核心权益与额度</h2>
+            <p class="lead">适合需要 ChatGPT 高阶能力、Codex 辅助开发和长期稳定使用的人群。</p>
+          </div>
+          <a class="pill-link" href="https://chatgpt.com/zh-Hans-CN/pricing/" target="_blank" rel="noreferrer">查看官网套餐介绍</a>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit">
+            <span class="benefit-tag">ChatGPT</span>
+            <h3>含 GPT Plus 体验</h3>
+            <p>兑换后在自己的 GPT 账号中使用，收到邮件后退出重登即可检查状态。</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-tag">Codex</span>
+            <h3>可使用 Codex</h3>
+            <p>邮件只显示 Codex 代码邀请属于正常情况，重登后网站和 Codex 都可以用。</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-tag">售后</span>
+            <h3>支持续费保留</h3>
+            <p>可长期续费，续费后数据可保留在原空间，使用问题可联系售后。</p>
+          </article>
+        </div>
+
+        <div class="quota-grid" style="margin-top: 16px;">
+          <div class="quota">
+            <span class="quota-icon">T</span>
+            <div>
+              <strong>Thinking：周 3000 次</strong>
+              <span>用于高强度推理、复杂问题处理。</span>
+            </div>
+          </div>
+          <div class="quota">
+            <span class="quota-icon">P</span>
+            <div>
+              <strong>Pro：月 15 次</strong>
+              <span>额度以商品文案和实际账号显示为准。</span>
+            </div>
+          </div>
+          <div class="quota">
+            <span class="quota-icon">C</span>
+            <div>
+              <strong>Codex：类似 Plus</strong>
+              <span>适合代码生成、项目修改和开发辅助。</span>
+            </div>
+          </div>
+          <div class="quota">
+            <span class="quota-icon">续</span>
+            <div>
+              <strong>原空间可续费</strong>
+              <span>长期使用时尽量保持账号和网络环境稳定。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container image-showcase">
+        <figure class="screenshot">
+          <img src="image/team套餐.png" alt="ChatGPT Team / Business 官网套餐截图">
+          <figcaption>套餐介绍截图，官方套餐、权益和规则请以 chatgpt.com/pricing 页面为准。</figcaption>
+        </figure>
+        <div class="note-list" aria-label="下单前提示">
+          <div class="note">推荐使用自己注册且稳定使用过一个月的账号，Gmail 更稳。</div>
+          <div class="note">近期官方风控较严格，尽量保证账号使用环境干净，网络环境稳定。</div>
+          <div class="note">正常使用一般很稳；若因为店铺原因掉车，会按售后规则处理。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>兑换与登录流程</h2>
+            <p class="lead">下单完成后会发卡密，按步骤兑换到自己的邮箱，并完成网页登录和 Codex 登录。</p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div>
+              <h3>准备稳定账号</h3>
+              <p>优先使用自己注册、稳定使用过一个月的账号；若没有账号，可先准备合规可验证的成品号。</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>兑换到邮箱</h3>
+              <p>下单后根据卡密把权益兑换到自己的邮箱。收到确认邮件即可，邮件只显示 Codex 代码邀请是正常现象。</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>退出并重登网页端</h3>
+              <p>收到邮件后，在 GPT 网页端退出登录，再重新登录。如果提示未分配 GPT 使用权限，继续按排障步骤处理。</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>处理 Cookie 和节点</h3>
+              <ul>
+                <li>退出登录。</li>
+                <li>删除浏览器 Cookie。</li>
+                <li>更换稳定节点，例如日、新、美。</li>
+                <li>再次登录 GPT 网页端，再打开 Codex 并退出重登。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section band">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <h2>常见情况处理</h2>
+            <p class="lead">多数登录或额度提示问题，都先按退出重登、清 Cookie、稳定节点的顺序处理。</p>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <details open>
+            <summary>显示未分配 GPT 使用权限怎么办？</summary>
+            <p>先退出登录，删除浏览器 Cookie，更换稳定节点后再次登录。网页登录成功后，再打开 Codex 并退出重登。</p>
+          </details>
+          <details>
+            <summary>出现额度用完提示怎么办？</summary>
+            <p>同样先退出重登。如果仍然不行，不要频繁尝试，稍后再试或联系管理员。</p>
+          </details>
+          <details>
+            <summary>怎么删除浏览器 Cookie？</summary>
+            <p>点击网址前的锁形图标或站点设置图标，进入 Cookie / 正在使用的 Cookie，逐个删除该站点的 Cookie 后重新登录。</p>
+          </details>
+          <details>
+            <summary>Codex 弹窗验证手机号怎么办？</summary>
+            <p>先退出账号并重新登录几次。若仍无法通过，请按官方提示使用本人可接收验证码的号码完成验证，或更换合规可验证账号。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="section">
+      <div class="container support">
+        <div class="support-copy">
+          <h2>售后与补充</h2>
+          <p class="lead">使用期间保持同一稳定节点，减少频繁切换。遇到问题时带上账号状态截图联系售后。</p>
+          <ul class="support-list">
+            <li>售后 QQ 群：914585964。</li>
+            <li>尽量使用干净、稳定的网络环境。</li>
+            <li>如果因为店铺原因掉车，会按售后规则处理。</li>
+          </ul>
+        </div>
+        <aside class="qr-card" aria-label="售后 QQ 群二维码">
+          <img src="image/team-qq群.jpg" alt="售后 QQ 群二维码">
+          <strong>售后 QQ 群：914585964</strong>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">本页面根据店铺文案整理生成；官方套餐、价格、额度和服务条款请以 ChatGPT 官网为准。本页面不是 OpenAI 官方销售页面。</div>
+  </footer>
+</body>
+</html>
